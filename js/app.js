@@ -31,6 +31,7 @@ $clear.click(function () {
 	numbers.numb1 = 0;
 	numbers.numb2 = 0;
 	numb = 0;
+	numbers.math = "";
 	$screen.removeClass("screen-lol");
 });
 // --- numb = string of inputs before math
