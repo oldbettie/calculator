@@ -2,34 +2,34 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: "Roboto", sans-serif;
-	font-size: 60px;
-	max-width: 960px;
-	max-height: 900px;
-	margin: auto auto;
+	font-size: 10vh;
+	max-width: 90vw;
+	height: 90vh;
+	margin: 0 auto;
 	background-color: black;
 }
 
 .maingrid {
 	display: grid;
-	grid-template-rows: 1fr 6fr;
-	margin: 10px 40px;
-	border: solid rgb(67, 66, 66) 4px;
-	padding: 5px;
+	grid-template-rows: 1fr 5fr;
+	margin: 1vh 2vw;
+	border: solid rgb(67, 66, 66) 1vh;
+	padding: 1vw;
 	background-color: antiquewhite;
 }
 .screen {
-	border: 12px solid black;
-	margin: 0px 10px 10px 10px;
+	border: 1vh solid black;
+	margin: 0px 1vw 1vw 1vw;
 	text-align: right;
-	height: 80px;
-	font-size: 50px;
+	height: 8vh;
+	font-size: 6vh;
 	overflow: hidden;
 }
 .buttonsgrid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	text-align: center;
-	gap: 6px;
+	gap: 1vw;
 }
 .button,
 .clear,
@@ -45,7 +45,7 @@ body {
 	border-radius: 20px;
 }
 .random {
-	font-size: 35px;
+	font-size: 4.5vw;
 }
 .button:hover,
 .clear:hover,
@@ -55,11 +55,11 @@ body {
 	box-shadow: 2px 2px 5px black;
 }
 .all-inputs {
-	width: 96%;
-	font-size: 20px;
+	width: 80vw;
+	font-size: 1.8vh;
 	text-align: left;
 	margin: 10px auto -20px auto;
-	height: 20px;
+	height: 1vh;
 }
 .screen-container {
 	display: grid;
