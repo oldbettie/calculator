@@ -5,7 +5,7 @@ body {
 	font-size: 10vh;
 	max-width: 90vw;
 	height: 90vh;
-	margin: 0 auto;
+	margin: 2vh auto;
 	background-color: black;
 }
 
@@ -18,11 +18,14 @@ body {
 	background-color: antiquewhite;
 }
 .screen {
+	display: flex;
+	align-items: center;
+	justify-content: end;
 	border: 1vh solid black;
 	margin: 0px 1vw 1vw 1vw;
 	text-align: right;
 	height: 8vh;
-	font-size: 6vh;
+	font-size: 5vh;
 	overflow: hidden;
 }
 .buttonsgrid {
