@@ -24,7 +24,8 @@ body {
 	text-align: center;
 	gap: 4px;
 }
-.button {
+.button,
+.clear {
 	display: flex;
 	margin: 0;
 	padding: 0;
@@ -35,7 +36,8 @@ body {
 	justify-content: center;
 	font-weight: 600;
 }
-.button:hover {
+.button:hover,
+.clear:hover {
 	background-color: rgb(75, 125, 126);
 	cursor: pointer;
 }
