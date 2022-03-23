@@ -9,6 +9,7 @@ const $plus = $("#plus");
 const $equals = $("#equals");
 const $btn = $(".button");
 const $random = $("#random");
+const $allInputs = $(".all-inputs");
 let numbers = {
 	numb1: 0,
 	numb2: 0,
@@ -16,16 +17,20 @@ let numbers = {
 };
 let numb = "";
 let randomNumber = 0;
+let total = 0;
 
 // --- add to screen
 $btn.click(function () {
 	$screen.append(this.innerHTML);
+	$allInputs.append(this.innerHTML);
 });
 // --- clear calculator memory
 $clear.click(function () {
 	$screen.text("");
-	numb1 = 0;
-	numb2 = 0;
+	$allInputs.text("");
+	numbers.numb1 = 0;
+	numbers.numb2 = 0;
+	numb = 0;
 });
 // --- clears the screen for second number input
 const clearScreen = function () {
@@ -41,6 +46,15 @@ $numbers.click(function () {
 // --- start of math functions ---
 //
 // --- divide
+$percent.click(function () {
+	if (numbers.numb1 < 1) {
+		numbers.numb1 = parseFloat(numb);
+	}
+	numb = 0;
+	$screen.text(`% ${numbers.numb1 / 100}`);
+	numbers.numb1 = numbers.numb1 / 100;
+	numbers.math = "%";
+});
 $divide.click(function () {
 	if (numbers.numb1 < 1) {
 		numbers.numb1 = parseFloat(numb);
@@ -76,29 +90,39 @@ $minus.click(function () {
 	$screen.text("-");
 	numbers.math = "minus";
 });
+// typing a number then hitting rand will returna random numb between 0 and selected numb
 $random.click(function () {
 	numbers.numb1 = parseFloat(numb);
-	function getRandomInt(max) {
-		randomNumber = Math.floor(Math.random() * max);
-	}
-	getRandomInt(parseFloat(numb));
+	randomNumber = Math.floor(Math.random() * numbers.numb1);
 	$screen.text(`random 0 to ${numbers.numb1} = ${randomNumber}`);
 	numbers.numb1 = 0;
 	numbers.numb2 = 0;
-	numb = 0;
 });
+// --- math logic
 $equals.click(function () {
 	numbers.numb2 = parseFloat(numb);
 	if (numbers.math === "divide") {
 		$screen.text(`${numbers.numb1 / numbers.numb2} =`);
+		numbers.numb1 = numbers.numb1 / numbers.numb2;
+		$allInputs.append(numbers.numb1);
+		numbers.numb2 = 0;
 	} else if (numbers.math === "times") {
 		$screen.text(`${numbers.numb1 * numbers.numb2} =`);
+		numbers.numb1 = numbers.numb1 * numbers.numb2;
+		$allInputs.append(numbers.numb1);
+		numbers.numb2 = 0;
 	} else if (numbers.math === "plus") {
 		$screen.text(`${numbers.numb1 + numbers.numb2} =`);
+		numbers.numb1 = numbers.numb1 + numbers.numb2;
+		$allInputs.append(numbers.numb1);
+		numbers.numb2 = 0;
 	} else if (numbers.math === "minus") {
 		$screen.text(`${numbers.numb1 - numbers.numb2} =`);
+		numbers.numb1 = numbers.numb1 - numbers.numb2;
+		$allInputs.append(numbers.numb1);
+		numbers.numb2 = 0;
 	}
-	numbers.math = "";
+	// numbers.math = "";
 });
 // logs or errors
 console.log(numbers.math);
