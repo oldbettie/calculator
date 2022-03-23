@@ -7,6 +7,9 @@ body {
 	max-height: 900px;
 	margin: 0 auto;
 }
+.screen {
+	height: 80px;
+}
 
 .maingrid {
 	display: grid;
@@ -25,7 +28,8 @@ body {
 	gap: 4px;
 }
 .button,
-.clear {
+.clear,
+.random {
 	display: flex;
 	margin: 0;
 	padding: 0;
@@ -37,7 +41,8 @@ body {
 	font-weight: 600;
 }
 .button:hover,
-.clear:hover {
+.clear:hover,
+.random:hover {
 	background-color: rgb(75, 125, 126);
 	cursor: pointer;
 }
