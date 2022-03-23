@@ -68,3 +68,7 @@ body {
 #equals {
 	grid-column: span 2;
 }
+.screen-lol {
+	background-image: url(images/boobs.jpeg);
+	color: aliceblue;
+}

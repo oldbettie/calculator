@@ -31,6 +31,7 @@ $clear.click(function () {
 	numbers.numb1 = 0;
 	numbers.numb2 = 0;
 	numb = 0;
+	$screen.removeClass("screen-lol");
 });
 // --- clears the screen for second number input
 const clearScreen = function () {
@@ -40,12 +41,10 @@ const clearScreen = function () {
 $numbers.click(function () {
 	input = $(this).prop("id");
 	numb += input;
+	console.log(numb);
 });
 
-//
-// --- start of math functions ---
-//
-// --- divide
+// --- percent of whole number
 $percent.click(function () {
 	if (numbers.numb1 < 1) {
 		numbers.numb1 = parseFloat(numb);
@@ -55,6 +54,7 @@ $percent.click(function () {
 	numbers.numb1 = numbers.numb1 / 100;
 	numbers.math = "%";
 });
+// --- divide
 $divide.click(function () {
 	if (numbers.numb1 < 1) {
 		numbers.numb1 = parseFloat(numb);
@@ -80,6 +80,10 @@ $plus.click(function () {
 	numb = 0;
 	$screen.text("+");
 	numbers.math = "plus";
+	if (numbers.numb1 === 80085) {
+		console.log("event");
+		$screen.addClass("screen-lol");
+	}
 });
 // --- minus
 $minus.click(function () {
@@ -124,5 +128,3 @@ $equals.click(function () {
 	}
 	// numbers.math = "";
 });
-// logs or errors
-console.log(numbers.math);
