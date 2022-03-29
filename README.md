@@ -8,5 +8,5 @@ this was my project 1.5 in reference to having completed my project for the week
 
 you can checkout project 1.0 if my repo if that interests you also.
 
-###updates
+##updates
 made it screen responsive using vh and vw.
